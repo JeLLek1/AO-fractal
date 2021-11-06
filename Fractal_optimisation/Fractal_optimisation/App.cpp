@@ -3,6 +3,9 @@
 #include "Shader.h"
 #include "DrawTool.h"
 #include "MandelbrotNaive.h"
+#include "MandelbrotOpenCL.h"
+#include "MandelbrotShaders.h"
+#include "CommandListSelect.h"
 #include <stdlib.h>
 #include <glad/glad.h>
 #include <iostream>
@@ -11,6 +14,12 @@ App* App::instance_ = nullptr;
 
 App::App()
 {
+    fractals_ = {
+        std::make_pair("Podejscie naiwne", new MandelbrotNaive()),
+        std::make_pair("Optymalizacja przez OpenCL", new MandelbrotOpenCL()),
+        std::make_pair("Optymalizacja przez shadery", new MandelbrotShaders()),
+    };
+
     glfwInit();
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -22,6 +31,7 @@ App::App()
     window_ = glfwCreateWindow(WINDOW_WIDTH, WINDOW_HEIGHT, APP_NAME, nullptr, nullptr);
     if (window_ == nullptr) {
         glfwTerminate();
+        std::cout << "ERROR::GLFW: Could not create window" << std::endl;
         exit(EXIT_FAILURE);
     }
     glfwMakeContextCurrent(window_);
@@ -32,6 +42,7 @@ App::App()
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) // initializacja loadera funckji opengl
     {
         glfwTerminate();
+        std::cout << "ERROR::GLAD: Could not load GL" << std::endl;
         exit(EXIT_FAILURE);
     }
     monitor_ = glfwGetPrimaryMonitor();
@@ -39,15 +50,15 @@ App::App()
     glfwGetWindowSize(window_, &tmpWinSize_.x, &tmpWinSize_.y);
     glfwGetWindowPos(window_, &tmpWinPos_.x, &tmpWinPos_.y);
 
+    gui_ = new GUI(Vector2<int>(WINDOW_WIDTH, WINDOW_HEIGHT));
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glClearColor(0.f, 0.f, 0.f, 1.0f);
 
-    gui_ = new GUI(Vector2<int>(WINDOW_WIDTH, WINDOW_HEIGHT));
-
-    fractals_ = {
-        std::make_pair("Podejscie naiwne", new MandelbrotNaive(Vector2<int>(WINDOW_WIDTH, WINDOW_HEIGHT))),
-    };
+    for (auto i : fractals_) {
+        i.second->init(Vector2<int>(WINDOW_WIDTH, WINDOW_HEIGHT));
+    }
     setCurrentFractal(0);
 }
 
@@ -158,4 +169,8 @@ void App::keyCallback(GLFWwindow* window, int key, int scancode, int action, int
         app->toggleFullscreen();
     if (key == GLFW_KEY_1 && action == GLFW_PRESS)
         app->setCurrentFractal(0);
+    if (key == GLFW_KEY_2 && action == GLFW_PRESS)
+        app->setCurrentFractal(1);
+    if (key == GLFW_KEY_3 && action == GLFW_PRESS)
+        app->setCurrentFractal(2);
 }
