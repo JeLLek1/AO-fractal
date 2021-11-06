@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\math">
+      <UniqueIdentifier>{b0367aea-7577-45da-a86b-822a3a2a8506}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\math">
+      <UniqueIdentifier>{00a4fb71-34ec-4a5f-9a90-ace300aa1fd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\scene">
+      <UniqueIdentifier>{5a1abd9d-1b50-485b-a81f-314e7a26e682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\scene">
+      <UniqueIdentifier>{eeb92ecb-8402-4ae5-8f73-667e8fff3b60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\helpers">
+      <UniqueIdentifier>{84023c51-8d66-4838-a51f-58e54fec9ad5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\helpers">
+      <UniqueIdentifier>{e6f15966-7724-4862-b5e2-350fa3b24efa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\entities">
+      <UniqueIdentifier>{998fed1e-feda-4099-880a-700cf874abb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\entities">
+      <UniqueIdentifier>{c70280b4-49c5-49ab-95e2-94252bf18af3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\entities\mandelbrot">
+      <UniqueIdentifier>{7da22efb-7477-400a-b018-c2bf2fad50fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\entities\mandelbrot">
+      <UniqueIdentifier>{afeacb54-5bd4-46d0-bd0d-6a4681cd0d07}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="App.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="glad.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Pliki źródłowe\math</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Pliki źródłowe\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="FileLoader.cpp">
+      <Filter>Pliki źródłowe\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawTool.cpp">
+      <Filter>Pliki źródłowe\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="RGBTable.cpp">
+      <Filter>Pliki źródłowe\helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Pliki źródłowe\math</Filter>
+    </ClCompile>
+    <ClCompile Include="Color.cpp">
+      <Filter>Pliki źródłowe\math</Filter>
+    </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Pliki źródłowe\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Font.cpp">
+      <Filter>Pliki źródłowe\scene</Filter>
+    </ClCompile>
+    <ClCompile Include="MandelbrotNaive.cpp">
+      <Filter>Pliki źródłowe\entities\mandelbrot</Filter>
+    </ClCompile>
+    <ClCompile Include="Mandelbrot.cpp">
+      <Filter>Pliki źródłowe\entities\mandelbrot</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI.cpp">
+      <Filter>Pliki źródłowe\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Pliki źródłowe\scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="settings.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="App.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Pliki nagłówkowe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Pliki nagłówkowe\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="FileLoader.h">
+      <Filter>Pliki nagłówkowe\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawTool.h">
+      <Filter>Pliki nagłówkowe\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="RGBTable.h">
+      <Filter>Pliki nagłówkowe\helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Pliki nagłówkowe\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Pliki nagłówkowe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Pliki nagłówkowe\math</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
+      <Filter>Pliki nagłówkowe\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Font.h">
+      <Filter>Pliki nagłówkowe\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="MandelbrotNaive.h">
+      <Filter>Pliki nagłówkowe\entities\mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="Mandelbrot.h">
+      <Filter>Pliki nagłówkowe\entities\mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="GUI.h">
+      <Filter>Pliki nagłówkowe\entities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector2.inl">
+      <Filter>Pliki nagłówkowe\math</Filter>
+    </None>
+  </ItemGroup>
+</Project>
