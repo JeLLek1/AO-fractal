@@ -52,9 +52,9 @@ void MandelbrotNaive::generateTextureData()
             if (level == MAX_LEVELS) {
                 textureData_[pos] = textureData_[pos + 1] = textureData_[pos + 2] = 0;
             } else {
-                textureData_[pos] = rgbTable_->getR(level);
-                textureData_[pos + 1] = rgbTable_->getG(level);
-                textureData_[pos + 2] = rgbTable_->getB(level);
+                textureData_[pos] = rgbTable_->getRub(level);
+                textureData_[pos + 1] = rgbTable_->getGub(level);
+                textureData_[pos + 2] = rgbTable_->getBub(level);
             }
         }
     }

@@ -17,6 +17,7 @@ Text::Text(Font* font)
     glBindVertexArray(0);
 }
 
+// wywo³aæ przez przypisaniem koloru i macierzy projekcji
 void Text::attachShader(Shader* shader)
 {
     shader_ = shader;
@@ -30,6 +31,9 @@ void Text::setText(std::string text)
 void Text::setColor(Color color)
 {
     color_ = color;
+    if (shader_ != nullptr) {
+        shader_->setColor("textColor", color_);
+    }
 }
 
 void Text::setScale(GLfloat scale)
@@ -45,7 +49,6 @@ void Text::setPosition(Vector2<GLfloat> position)
 void Text::setProjectionMatrix(Vector2<int> size)
 {
     if (shader_ != nullptr) {
-        shader_->apply();
         shader_->setMat4("projection", glm::ortho(0.0f, static_cast<GLfloat>(size.x), 0.0f, static_cast<GLfloat>(size.y)));
     }
 }
@@ -54,7 +57,6 @@ void Text::draw()
 {
     if (shader_ != nullptr) {
         shader_->apply();
-        shader_->setColor("textColor", color_);
     }
     glActiveTexture(GL_TEXTURE0);
     glBindVertexArray(VAO_);

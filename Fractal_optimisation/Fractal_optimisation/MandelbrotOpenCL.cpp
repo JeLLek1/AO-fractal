@@ -57,7 +57,7 @@ void MandelbrotOpenCL::init(Vector2<int> size)
     rgbTable_ = new RGBTable(COLORS_COUNT);
     opencl_->enqueueData("maxLevels", MAX_LEVELS);
     opencl_->enqueueData("maxColors", COLORS_COUNT);
-    opencl_->enqueueVectorData("colorTable", rgbTable_->getColorsVector()); 
+    opencl_->enqueueVectorData("colorTable", rgbTable_->getColorsVectorub()); 
 
     drawTool_->attachShader(shader_);
     drawTool_->attachTexture(texture_);

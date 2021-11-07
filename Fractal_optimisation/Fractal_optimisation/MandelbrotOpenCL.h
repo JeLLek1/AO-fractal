@@ -15,7 +15,7 @@ protected:
     DrawTool* drawTool_ = nullptr;
     RGBTable* rgbTable_ = nullptr;
 
-    std::vector<GLfloat> textureData_;
+    std::vector<GLubyte> textureData_;
 
     Vector2<size_t> texSize_;
 

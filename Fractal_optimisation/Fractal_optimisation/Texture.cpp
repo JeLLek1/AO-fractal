@@ -15,10 +15,10 @@ Texture::Texture()
 
 }
 
-void Texture::updateTexture(GLsizei width, GLsizei height, const GLfloat* pixels)
+void Texture::updateTexture(GLsizei width, GLsizei height, const GLubyte* pixels)
 {
     glBindTexture(GL_TEXTURE_2D, id_);
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, width, height, 0, GL_RGB, GL_FLOAT, pixels);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, pixels);
 }
 
 void Texture::apply()

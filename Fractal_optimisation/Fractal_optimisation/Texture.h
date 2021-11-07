@@ -9,7 +9,7 @@ public:
     Texture();
     void operator=(const Texture&) = delete;
 
-    void updateTexture(GLsizei width, GLsizei height, const GLfloat* pixels);
+    void updateTexture(GLsizei width, GLsizei height, const GLubyte* pixels);
     void apply();
 
     GLuint getId();

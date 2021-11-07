@@ -131,9 +131,9 @@ del /f /s /q "$(OutDir)opencl" 1&gt;nul
 rmdir /s /q "$(OutDir)shaders"
 rmdir /s /q "$(OutDir)assets"
 rmdir /s /q "$(OutDir)opencl"
-mkdir $(OutDir)shaders\"
-mkdir $(OutDir)assets\"
-mkdir $(OutDir)opencl\"
+mkdir "$(OutDir)shaders\"
+mkdir "$(OutDir)assets\"
+mkdir "$(OutDir)opencl\"
 xcopy "$(ProjectDir)shaders" "$(OutDir)shaders" /e /y
 xcopy "$(ProjectDir)assets" "$(OutDir)assets" /e /y
 xcopy "$(ProjectDir)external" "$(OutDir)" /e /y
@@ -166,9 +166,9 @@ del /f /s /q "$(OutDir)opencl" 1&gt;nul
 rmdir /s /q "$(OutDir)shaders"
 rmdir /s /q "$(OutDir)assets"
 rmdir /s /q "$(OutDir)opencl"
-mkdir $(OutDir)shaders\"
-mkdir $(OutDir)assets\"
-mkdir $(OutDir)opencl\"
+mkdir "$(OutDir)shaders\"
+mkdir "$(OutDir)assets\"
+mkdir "$(OutDir)opencl\"
 xcopy "$(ProjectDir)shaders" "$(OutDir)shaders" /e /y
 xcopy "$(ProjectDir)assets" "$(OutDir)assets" /e /y
 xcopy "$(ProjectDir)external" "$(OutDir)" /e /y

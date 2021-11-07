@@ -112,7 +112,6 @@ void DrawTool::commit()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, static_cast<GLsizei>(vectorSize * sizeof(GLfloat)), (void*)(7 * sizeof(GLfloat)));
     glEnableVertexAttribArray(2);
 
-
     if (shader_ != nullptr && texture_ != nullptr) {
         shader_->apply();
     }

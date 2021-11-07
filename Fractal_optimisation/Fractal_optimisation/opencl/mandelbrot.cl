@@ -5,8 +5,8 @@ void kernel get_color(
 	ulong maxLevels,
 	double ratio,
 	ulong maxColors,
-	global float4* colorTable,
-	global float* texture){
+	global uchar* colorTable,
+	global uchar* texture){
 		size_t y = get_global_id(0);
 		double c_im = ratio * y + ltCorner.y;
 		for(size_t x = 0; x < fractalSize.x; x++){
@@ -29,9 +29,9 @@ void kernel get_color(
 				texture[arrPos + 1] = 0;
 				texture[arrPos + 2] = 0;
 			}else{
-				texture[arrPos] = colorTable[level % maxColors].r;
-				texture[arrPos + 1] = colorTable[level % maxColors].g;
-				texture[arrPos + 2] = colorTable[level % maxColors].b;
+				texture[arrPos] = colorTable[(level % maxColors) * 3];
+				texture[arrPos + 1] = colorTable[(level % maxColors) * 3 + 1];
+				texture[arrPos + 2] = colorTable[(level % maxColors) * 3 + 2];
 			}
 		}
 }

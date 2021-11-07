@@ -24,7 +24,7 @@ void CommandListSelect::handleInput(char key)
 			if (next >= selections_.size())
 				next = 0;
 
-			currentSelection_ = next;
+			currentSelection_ = next; 
 			break;
 		}
 	}
