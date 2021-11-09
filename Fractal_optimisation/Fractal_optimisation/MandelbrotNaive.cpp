@@ -32,6 +32,7 @@ void MandelbrotNaive::init(Vector2<int> size)
 
 void MandelbrotNaive::generateTextureData()
 {
+    if (fractalSize_.x * fractalSize_.y <= 0) return;
     for (size_t y = 0; y < fractalSize_.y; y++) {
         double c_im = ratio_ * y + ltCorner_.y;
         for (size_t x = 0; x < fractalSize_.x; x++) {

@@ -75,7 +75,8 @@ void MandelbrotOpenCL::init(Vector2<int> size)
 
 void MandelbrotOpenCL::generateTextureData()
 {
-    opencl_->run(static_cast<size_t>(fractalSize_.y));
+    if (fractalSize_.x * fractalSize_.y <= 0) return;
+    opencl_->run(static_cast<size_t>(fractalSize_.x) * static_cast<size_t>(fractalSize_.y));
     opencl_->readVectorResult("texture", textureData_);
 }
 
