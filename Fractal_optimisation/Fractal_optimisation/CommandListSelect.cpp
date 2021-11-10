@@ -20,7 +20,7 @@ void CommandListSelect::handleInput(char key)
 		}
 		case 's':
 		{
-			size_t next = currentSelection_ - 1;
+			size_t next = currentSelection_ + 1;
 			if (next >= selections_.size())
 				next = 0;
 
@@ -32,6 +32,7 @@ void CommandListSelect::handleInput(char key)
 
 void CommandListSelect::display()
 {
+	std::cout << title_ << std::endl << std::endl;
 	for (size_t i = 0; i < selections_.size(); i++) {
 		if (currentSelection_ == i) {
 			std::cout << " -> ";
@@ -43,8 +44,9 @@ void CommandListSelect::display()
 	}
 }
 
-CommandListSelect::CommandListSelect(std::vector<std::string>& selections)
+CommandListSelect::CommandListSelect(std::string title, std::vector<std::string>& selections)
 {
+	title_ = title;
     selections_ = selections;
 }
 

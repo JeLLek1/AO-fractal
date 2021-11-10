@@ -15,13 +15,13 @@ void MandelbrotOpenCL::setupOpenCL()
 {
     opencl_ = new OpenCL();
     std::vector<std::string> availablePlatforms = opencl_->getAvailablePlatforms();
-    CommandListSelect platformSelect(availablePlatforms);
+    CommandListSelect platformSelect("(OpenCL) Wybierz platforme:", availablePlatforms);
     if (!opencl_->applyPlatform(platformSelect.run())) {
         std::cout << "ERROR::OPEN_CL: Could not select platform" << std::endl;
         exit(EXIT_FAILURE);
     }
     std::vector<std::string> availableDevices = opencl_->getAvailableDevices();
-    CommandListSelect deviceSelect(availableDevices);
+    CommandListSelect deviceSelect("(OpenCL) Wybierz urzadzenie:", availableDevices);
     if (!opencl_->applyDevide(deviceSelect.run())) {
         std::cout << "ERROR::OPEN_CL: Could not select device" << std::endl;
         exit(EXIT_FAILURE);

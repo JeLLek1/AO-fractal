@@ -4,6 +4,8 @@
 class CommandListSelect
 {
 protected:
+    std::string title_;
+
     std::vector<std::string> selections_;
     size_t currentSelection_ = 0;
     bool applySelected_ = false;
@@ -11,7 +13,7 @@ protected:
     void handleInput(char key);
     void display();
 public:
-    CommandListSelect(std::vector<std::string> &selections);
+    CommandListSelect(std::string title, std::vector<std::string> &selections);
     size_t run();
 };
 

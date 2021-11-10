@@ -65,6 +65,7 @@ void MandelbrotNaive::resize(Vector2<int> size)
 {
     texSize_ = Vector2<size_t>(Math::get_pow_2(static_cast<size_t>(size.x)), Math::get_pow_2(size.y));
     fractalSize_ = size;
+
     Vector2<GLfloat> texCut = Vector2<GLfloat>(
         static_cast<GLfloat>(fractalSize_.x) / texSize_.x,
         static_cast<GLfloat>(fractalSize_.y) / texSize_.y

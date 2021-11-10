@@ -173,4 +173,7 @@ void App::keyCallback(GLFWwindow* window, int key, int scancode, int action, int
         app->setCurrentFractal(1);
     if (key == GLFW_KEY_3 && action == GLFW_PRESS)
         app->setCurrentFractal(2);
+    if (key == GLFW_KEY_SPACE && action == GLFW_PRESS) {
+        app->gui_->startTestTimer();
+    }
 }
